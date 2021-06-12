@@ -1,0 +1,13 @@
+<div>
+  <header>
+    <h1 class="mb-3">My Lists</h1>
+    <button class="button" (click)="onAdd()">Add</button>
+  </header>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let list of allLists">
+      <app-to-do-preview [list]=list (deleteChange)="deleteChange($event)"></app-to-do-preview>
+    </li>
+  </ul>
+</div>
+
+

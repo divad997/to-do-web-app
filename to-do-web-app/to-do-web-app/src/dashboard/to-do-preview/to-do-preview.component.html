@@ -1,0 +1,23 @@
+<div class="list-group">
+    <div class="d-flex w-100 justify-content-between">
+        <h2 class="mb-1">{{list.title}}</h2>
+        <button type="button" class="btn btn-light mr-1" (click)="onEdit()">
+            Edit List
+        </button>
+        <button type="button" class="btn btn-light mr-1" (click)="onDelete()">
+            Delete List
+        </button>
+    </div>
+    <div cdkDropList class="example-list" [cdkDropListData]="notCompleted">
+        <div class="example-box" *ngFor="let item of notCompleted" cdkDrag>
+            {{item.content}} 
+            <mat-checkbox>{{item.completed}}</mat-checkbox>
+        </div>
+    </div>
+    <div cdkDropList class="example-list" [cdkDropListData]="completed">
+        <div class="example-box" *ngFor="let item of completed" cdkDrag>
+            {{item.content}} 
+            <mat-checkbox>{{item.completed}}</mat-checkbox>
+        </div>
+    </div>
+</div>
